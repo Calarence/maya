@@ -11,6 +11,36 @@
     <modules>
         <module>maya-web</module>
     </modules>
+    <properties>
+        <spring.version>4.3.3.RELEASE</spring.version>
+        <junit.version>4.12</junit.version>
+        <log4j.version>1.7.5</log4j.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <jackson.version>2.5.4</jackson.version>
+    </properties>
+<profiles>
+    <profile>
+        <id>development</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <package.environment>development</package.environment>
+        </properties>
+    </profile>
+    <profile>
+        <id>production</id>
+        <properties>
+            <package.environment>production</package.environment>
+        </properties>
+    </profile>
+    <profile>
+        <id>testing</id>
+        <properties>
+            <package.environment>testing</package.environment>
+        </properties>
+    </profile>
 
 
+</profiles>
 </project>
