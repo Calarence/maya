@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="maya-web:war">
-    <output-path>$PROJECT_DIR$/maya-web/target</output-path>
-    <root id="archive" name="maya-web.war">
-      <element id="artifact" artifact-name="maya-web:war exploded" />
-    </root>
-  </artifact>
-</component>
