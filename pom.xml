@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>maya-web</module>
+        <module>maya-dal</module>
+        <module>maya-common</module>
     </modules>
     <properties>
         <spring.version>4.3.3.RELEASE</spring.version>
@@ -17,6 +19,7 @@
         <log4j.version>1.7.5</log4j.version>
         <slf4j.version>1.7.5</slf4j.version>
         <jackson.version>2.5.4</jackson.version>
+        <commons-lang.version>3.0</commons-lang.version>
     </properties>
 <profiles>
     <profile>
