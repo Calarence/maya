@@ -12,7 +12,7 @@
     <artifactId>maya-web</artifactId>
     <packaging>war</packaging>
 
-    <name>maya-web Maven Webapp</name>
+    <name>mybatis-web Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -74,10 +74,15 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.appleieye</groupId>
+            <artifactId>maya-dal</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>maya-web</finalName>
+        <finalName>mybatis-web</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

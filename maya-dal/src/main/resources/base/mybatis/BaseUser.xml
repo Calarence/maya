@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BaseUserDAO">
+	<resultMap id="result" type="com.appleieye.mybatis.dal.user.UserDO">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="age" column="age" />
+		<result property="sex" column="sex" />
+		<result property="createtime" column="createTime" />
+		<result property="updatettime" column="updatetTime" />
+	</resultMap>
+	
+	<sql id="insert_columns">
+            <if test="name != null">name</if>
+            <if test="age != null">,age</if>
+            <if test="sex != null">,sex</if>
+            <if test="createtime != null">,createTime</if>
+            <if test="updatettime != null">,updatetTime</if>
+	</sql>
+	
+	<sql id="insert_all_columns">
+			name
+            ,age
+            ,sex
+            ,createTime
+            ,updatetTime
+	</sql>
+
+	<sql id="insert_values">
+          <if test="name != null">#{name}</if>
+          <if test="age != null">,#{age}</if>
+          <if test="sex != null">,#{sex}</if>
+          <if test="createtime != null">,#{createtime}</if>
+          <if test="updatettime != null">,#{updatettime}</if>
+	</sql>
+
+    <sql id="batch_insert_values">
+            #{item.name}
+            ,#{item.age}
+            ,#{item.sex}
+            ,#{item.createtime}
+            ,#{item.updatettime}
+    </sql>
+	
+	<insert id="insertHasId" parameterType="com.appleieye.mybatis.dal.user.UserDO" useGeneratedKeys="false">
+		insert into user(
+			id,
+			<include refid="insert_columns" />
+		)values(
+			#{id},
+			<include refid="insert_values" />
+		)
+	</insert>
+	
+	<insert id="batchInsertHasId"  parameterType="java.util.List" useGeneratedKeys="false">
+		insert into user(
+			id,
+			<include refid="insert_all_columns" />
+		)values
+		<foreach collection="list" item="item" index="index" separator=",">
+		(
+		    #{item.id},
+            <include refid="batch_insert_values" />
+		)
+		</foreach>
+	</insert>
+
+	<insert id="insert" parameterType="com.appleieye.mybatis.dal.user.UserDO" useGeneratedKeys="true" keyProperty="id">
+		insert into user(
+			<include refid="insert_columns" />
+		)values(
+			<include refid="insert_values" />
+		)
+	</insert>
+
+	<insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true">
+		insert into user(
+			<include refid="insert_all_columns" />
+		)values
+		<foreach collection="list" item="item" index="index" separator=",">
+		(
+            <include refid="batch_insert_values" />
+		)
+		</foreach>
+	</insert>
+
+	<update id="update" parameterType="com.appleieye.mybatis.dal.user.UserDO">
+        update user
+        <set>
+            <if test="name != null"> name=#{name}, </if>
+            <if test="age != null"> age=#{age}, </if>
+            <if test="sex != null"> sex=#{sex}, </if>
+            <if test="createtime != null"> createTime=#{createtime}, </if>
+            <if test="updatettime != null"> updatetTime=#{updatettime}, </if>
+        </set>
+		where id=#{id}
+	</update>
+
+	<update id="updateByField" parameterType="java.util.HashMap">
+        update user
+        <set>
+            <if test="template.name != null"> name=#{template.name}, </if>
+            <if test="template.age != null"> age=#{template.age}, </if>
+            <if test="template.sex != null"> sex=#{template.sex}, </if>
+            <if test="template.createtime != null"> createTime=#{template.createtime}, </if>
+            <if test="template.updatettime != null"> updatetTime=#{template.updatettime}, </if>
+        </set>
+		<where>
+            <if test="condition.id != null"> and id=#{condition.id}</if>
+            <if test="condition.name != null"> and name=#{condition.name}</if>
+            <if test="condition.age != null"> and age=#{condition.age}</if>
+            <if test="condition.sex != null"> and sex=#{condition.sex}</if>
+            <if test="condition.createtime != null"> and createTime=#{condition.createtime}</if>
+            <if test="condition.updatettime != null"> and updatetTime=#{condition.updatettime}</if>
+        </where>
+	</update>
+
+	<select id="select" parameterType="java.util.Map" resultMap="result">
+		<include refid="select_all_column" />
+		from user 
+		where id=#{id}
+		<if test="isLock"> for update </if>
+	</select>
+
+	<select id="selectListByIdList" parameterType="java.util.Map" resultMap="result">
+		<include refid="select_all_column" />
+		from user
+		<where>
+			<if test="idList != null">
+			id in
+			<foreach item="item" index="index" collection="idList" open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			</if>
+		</where>
+		<if test="isLock"> for update </if>
+	</select>
+
+	<select id="selectEOByEO" parameterType="java.util.Map" resultMap="result">
+		<include refid="select_all_column" />
+		from user
+		<include refid="where_all" />
+	</select>
+	
+	<sql id="select_all_column">
+		select ID
+            ,name
+            ,age
+            ,sex
+            ,createTime
+            ,updatetTime
+	</sql>
+
+	<sql id="where_all">
+		<where>
+            <include refid="condition_all" />
+		</where>
+	</sql>
+
+    <sql id="condition_all">
+        <if test="condition.id != null"> and id=#{condition.id} </if>
+        <if test="condition.name != null and condition.name != ''"> and name=#{condition.name} </if>
+        <if test="condition.age != null"> and age=#{condition.age} </if>
+        <if test="condition.sex != null"> and sex=#{condition.sex} </if>
+        <if test="condition.createtime != null"> and createTime=#{condition.createtime} </if>
+        <if test="condition.updatettime != null"> and updatetTime=#{condition.updatettime} </if>
+    </sql>
+
+	<delete id="delete" parameterType="com.appleieye.mybatis.dal.user.UserDO">
+		delete from user
+		where id=#{id}
+	</delete>
+
+</mapper>
