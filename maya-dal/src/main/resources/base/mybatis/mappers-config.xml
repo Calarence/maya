@@ -9,8 +9,7 @@
             <property name="dialect" value="mysql"/>
         </plugin>
     </plugins>
-    <!--<mappers>-->
-        <!--<mapper resource="mybatis/BaseUser.xml"/>-->
-        <!--<mapper resource="mybatis/User.xml"/>-->
-            <!--</mappers>-->
+    <mappers>
+        <mapper resource="com/appleieye/maya/dal/mapper"/>
+    </mappers>
 </configuration>
