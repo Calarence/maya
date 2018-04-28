@@ -12,6 +12,9 @@
         <module>maya-web</module>
         <module>maya-dal</module>
         <module>maya-common</module>
+        <module>maya-api</module>
+        <module>chapter5</module>
+        <module>chapter6</module>
     </modules>
     <properties>
         <spring.version>4.3.3.RELEASE</spring.version>

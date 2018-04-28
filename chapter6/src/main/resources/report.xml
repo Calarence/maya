@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="report">
+    <test name="all">
+        <classes>
+            <class name="com.appleieye.test.DemoTest" />
+               <methods>
+                   <include name="test1" />
+                   <include name="test2" />
+                   <include name="test3" />
+               </methods>
+        </classes>
+
+    </test>
+<listeners>
+    <listener class-name="Listener.ExtentTestNGIReporterListener" />
+</listeners>
+</suite>

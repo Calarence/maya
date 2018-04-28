@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="parameter">
+    <test name="parameter">
+        <classes>
+            <parameter name="name" value="bob" />
+            <parameter name="age" value="10" />
+            <class name="com.appleieye.testng.parameter.ParameterTest">
+
+            </class>
+
+        </classes>
+
+    </test>
+
+
+</suite>

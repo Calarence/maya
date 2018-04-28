@@ -1,0 +1,26 @@
+[
+  {
+    "description":"post请求",
+    "request":{
+      "uri":"/postDemo",
+      "method":"post"
+    },
+    "response":{
+      "text":"first post"
+    }
+  },
+  {
+    "description":"带参数的post",
+    "request":{
+      "uri":"/postWithParam",
+      "method":"post",
+      "forms":{
+        "name":"wu",
+        "age":"10"
+      }
+    },
+    "response":{
+      "text":"post with param"
+    }
+  }
+]

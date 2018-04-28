@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="gropu">
+<test name="all">
+    <classes>
+        <class name="com.appleieye.testng.group.GroupOnClass1" />
+        <class name="com.appleieye.testng.group.GroupOnClass2" />
+        <class name="com.appleieye.testng.group.GroupOnClass3" />
+    </classes>
+</test>
+    <test name="onlyStu">
+        <groups>
+            <run>
+                <include name="class1"></include>
+
+            </run>
+        </groups>
+        <classes>
+            <class name="com.appleieye.testng.group.GroupOnClass1" />
+            <class name="com.appleieye.testng.group.GroupOnClass2" />
+            <class name="com.appleieye.testng.group.GroupOnClass3" />
+        </classes>
+
+    </test>
+</suite>

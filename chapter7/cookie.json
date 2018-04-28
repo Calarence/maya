@@ -1,0 +1,15 @@
+[
+  {
+    "description":"cookie",
+    "request":{
+      "uri":"/cookie",
+      "method":"get",
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response":{
+      "text":"cookie true"
+    }
+  }
+]

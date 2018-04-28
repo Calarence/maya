@@ -7,7 +7,13 @@
 
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+
+    <!--启用Spring基于annotation的D，使用户可以在spring中使用Spring的强大功能
+        激活@Required @Autowired @PostConstruct @PreDestroy @Resource等标注-->
+    <context:annotation-config />
+    <!--组件扫描-->
     <context:component-scan base-package="com.appleieye.maya.web.controller" />
+    <!--启用注解-->
     <mvc:annotation-driven  content-negotiation-manager="contentNegotiationManagerFactoryBean"/>
 
     <bean

@@ -1,0 +1,19 @@
+[
+  {
+    "description":"redirect test",
+    "request":{
+      "uri":"/redirect"
+    },
+    "redirectTo":"http://localhost:8888/redirectTo"
+  },
+  {
+    "description":"redirect to",
+    "request":{
+      "uri":"/redirectTo",
+      "method":"get"
+    },
+    "response":{
+      "text":"success"
+    }
+  }
+]

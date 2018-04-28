@@ -1,0 +1,22 @@
+[
+  {
+    "description":"test header",
+    "request":{
+      "uri":"/header",
+      "method":"post",
+      "headers":{
+        "content-type":"application/json"
+      },
+      "json":{
+        "name":"wu",
+        "age":"10"
+      }
+    },
+    "response":{
+      "json":{
+        "name":"wu"
+      }
+    }
+  }
+
+]
