@@ -11,5 +11,18 @@
     "response":{
       "text":"cookie true"
     }
+  },
+  {
+    "description":"return cookies",
+    "request":{
+      "uri":"/returnWithCookies",
+      "method":"get"
+    },
+    "response":{
+      "text":"hello world",
+      "cookies":{
+        "login":"true"
+      }
+    }
   }
 ]
