@@ -23,6 +23,25 @@
       "cookies":{
         "login":"true"
       }
+      }
+    }
+  ,
+  {
+    "description":"post with cookie",
+    "request":{
+      "uri":"/postWithCookie",
+      "method":"post",
+      "cookies":{
+        "login":"true"
+      },
+      "json":{
+        "name":"wu"
+      }
+    },
+    "response":{
+      "json":{
+        "name":"wujianjun"
+      }
     }
   }
 ]
