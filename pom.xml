@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.appleieye</groupId>
@@ -15,8 +16,9 @@
         <module>maya-api</module>
         <module>chapter5</module>
         <module>chapter6</module>
-        <module>client</module>
         <module>maya-client</module>
+        <module>maya-client</module>
+        <module>action</module>
     </modules>
     <properties>
         <spring.version>4.3.3.RELEASE</spring.version>
@@ -53,4 +55,16 @@
 
 
 </profiles>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.0.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>
