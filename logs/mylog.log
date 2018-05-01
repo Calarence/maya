@@ -862,3 +862,8 @@ Caused by: org.xml.sax.SAXParseException: 元素类型为 "mapper" 的内容必�
 2018-05-01 15:25:01.166 [http-nio-8888-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 2018-05-01 15:25:01.170 [http-nio-8888-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
 2018-05-01 15:25:01.354 [http-nio-8888-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-05-01 16:51:19.031 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m47s307ms).
+2018-05-01 17:29:54.470 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m35s254ms).
+2018-05-01 18:53:08.744 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m43s816ms).
+2018-05-01 19:23:29.386 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m20s642ms).
+2018-05-01 19:40:24.390 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m24s996ms).
