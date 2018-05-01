@@ -19,6 +19,7 @@
         <module>maya-client</module>
         <module>maya-client</module>
         <module>action</module>
+        <module>chapter11</module>
     </modules>
     <properties>
         <spring.version>4.3.3.RELEASE</spring.version>

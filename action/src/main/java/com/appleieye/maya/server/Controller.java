@@ -1,12 +1,10 @@
 package com.appleieye.maya.server;
 
 
+import com.appleieye.maya.com.appleieye.maya.model.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -65,6 +63,32 @@ public class Controller {
     @ApiOperation(value = "获取商品列表2",httpMethod = "GET")
     public Map<Integer,String> getList2(@PathVariable Integer start, @PathVariable Integer end){
         return getList(start,end);
+    }
+
+    @RequestMapping(value = "/getUserList")
+    @ApiOperation(value = "获取用户列表",httpMethod = "POST")
+    public String getUserList(HttpServletRequest request, @RequestBody User user){
+        String result = null;
+        Cookie [] cookies = request.getCookies();
+        if (Objects.nonNull(cookies)){
+            for (Cookie cookie:cookies){
+                if (cookie.getName().equals("login")&&cookie.getValue().equals("true")
+                        &&user.getUsername().equals("wu")&&user.getPassword().equals("521")){
+                    User model = new User();
+                    model.setUsername("zhangsan");
+                    model.setPassword("521");
+                    model.setAge(10);
+                    result = model.toString();
+                }
+                else{
+                    result = "用户名或密码错误";
+                }
+            }
+        }
+        else{
+            result = "need cookie";
+        }
+        return result;
     }
 
 }
