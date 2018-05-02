@@ -9,12 +9,12 @@
                 <property name="driver" value="com.mysql.jdbc.Driver" />
                 <property name="url" value="jdbc:mysql://127.0.0.1/maya" />
                 <property name="username" value="root" />
-                <property name="password" value="root" />
+                <property name="password" value="G2dhi@99" />
             </dataSource>
         </environment>
     </environments>
 <mappers>
-    <mapper resource="mappper/SQLMapper.xml" />
+    <mapper resource="mapper/SQLMapper.xml" />
 </mappers>
 
 </configuration>

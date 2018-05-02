@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <suite name="myTestNg">
-    <test>
-
-
+    <test name="testCase">
+        <classes>
+            <class name="com.appleieye.maya.cases.LoginTest">
+                <method>
+                    <include name="loginTrue" />
+                    <include name="loginFalse" />
+                </method>
+            </class>
+            <class name="com.appleieye.maya.cases.AddUserTest">
+                <method>
+                    <include name="addUser" />
+                </method>
+            </class>
+            <class name="com.appleieye.maya.cases.GetUserListTest">
+                <method>
+                    <include name="getUserList" />
+                    <include name="getUserInfo" />
+                </method>
+            </class>
+            <class name="com.appleieye.maya.cases.UpdateUserTest">
+                <method>
+                    <include name="updateUser" />
+                </method>
+            </class>
+        </classes>
     </test>
+    <listeners>
+        <listener class-name="com.appleieye.maya.config.ExtentTestNGIReporterListener"/>
+
+    </listeners>
 </suite>
