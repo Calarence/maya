@@ -12,7 +12,7 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://127.0.0.1:3306/maya
         username: root
-        password: root
+        password: G2dhi@99
 mybatis:
   type-aliases-package: com.appleieye.maya.model
   mapper-locations:

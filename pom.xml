@@ -21,6 +21,7 @@
         <module>action</module>
         <module>chapter11</module>
         <module>chapter12</module>
+        <module>chapter13</module>
     </modules>
     <properties>
         <spring.version>4.3.3.RELEASE</spring.version>
