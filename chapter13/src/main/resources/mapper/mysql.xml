@@ -11,9 +11,9 @@
     <select id="getUserList" parameterType="com.appleieye.maya.model.User" resultType="com.appleieye.maya.model.User">
         SELECT * FROM user
         <trim prefix="WHERE" prefixOverrides="and">
-            <if test="null !=id and '' != id">
-                AND id=#{id}
-            </if>
+            <!--<if test="null !=id and '' != id">-->
+                <!--AND id=#{id}-->
+            <!--</if>-->
             <if test="null != username and ''!= username">
                 AND username=#{username}
             </if>

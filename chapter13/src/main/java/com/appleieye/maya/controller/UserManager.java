@@ -80,7 +80,7 @@ public class UserManager {
     }
 
 
-    @RequestMapping("/updateUser")
+    @RequestMapping("/updateUserInfo")
     @ApiOperation(value = "更新用户",httpMethod = "POST")
     public int updateUser(HttpServletRequest request,@RequestBody User user){
         boolean isValidCookie = verifyCookies(request);

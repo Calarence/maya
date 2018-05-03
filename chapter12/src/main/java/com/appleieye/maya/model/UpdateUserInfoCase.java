@@ -18,4 +18,5 @@ public class UpdateUserInfoCase {
     private String permission;
     private String isDelete;
     private String expected;
+    private String password;
 }
